@@ -1,0 +1,30 @@
+.planItem {
+    display: flex;
+    justify-content: space-between;
+    padding: 0px 15px;
+    margin-top: 20px;
+}
+
+.planItem > div > p {
+    opacity: 0.8;
+}
+
+.planItem__unselected {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    background-color: #e50914;
+    border: none;
+    outline: none;
+    cursor: pointer;
+}
+
+.planItem__selected {
+    padding: 10px 20px;
+    font-size: 1rem;
+    color: #fff;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    background-color: #808080;
+}
