@@ -26,7 +26,7 @@ const ProfileScreen = () => {
                             <p>Renewal date: 05/04/2021</p>
                             <PlanItem text="Netflix Standard" quality="1080p" />
                             <PlanItem text="Netflix Basic" quality="480p" />
-                            <PlanItem text="Netflix Premium" quality="4K HDR" />
+                            <PlanItem text="Netflix Premium" quality="4K + HDR" />
                             <button
                                 className="profileScreen__signOut"
                                 onClick={() => auth.signOut()}

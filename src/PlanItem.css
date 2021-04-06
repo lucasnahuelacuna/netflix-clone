@@ -3,10 +3,11 @@
     justify-content: space-between;
     padding: 0px 15px;
     margin-top: 20px;
+    opacity: 0.8;
 }
 
-.planItem > div > p {
-    opacity: 0.8;
+.planItem:hover {
+    opacity: 1;
 }
 
 .planItem__unselected {
