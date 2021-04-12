@@ -1,6 +1,11 @@
 import React, { useEffect, useState } from 'react'
 import './Row.css'
 import axios from './axios'
+//import PlayArrowIcon from '@material-ui/icons/PlayArrow';
+//import AddIcon from '@material-ui/icons/Add';
+//import ThumbUpOutlinedIcon from '@material-ui/icons/ThumbUpOutlined';
+//import ThumbDownOutlinedIcon from '@material-ui/icons/ThumbDownOutlined';
+//import KeyboardArrowDownOutlinedIcon from '@material-ui/icons/KeyboardArrowDownOutlined';
 
 const Row = ({ title, fetchUrl, isLargeRow = false }) => {
     const [movies, setMovies] = useState([])
@@ -17,7 +22,6 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
         fetchData()
     }, [fetchUrl])
 
-    console.log(movies)
     return (
         <div className="row">
             <h2>{title}</h2>
@@ -26,14 +30,22 @@ const Row = ({ title, fetchUrl, isLargeRow = false }) => {
                 {movies.map(movie => (
                     ((isLargeRow && movie.poster_path) ||
                     (!isLargeRow && movie.backdrop_path)) && (
-                        <img
-                            className={`row__poster ${isLargeRow && 'row__posterLarge'}`}
-                            key={movie.id} 
-                            src={`${base_url}${
-                                isLargeRow ? movie.poster_path : movie.backdrop_path
-                            }`} 
-                            alt={movie.name} 
-                        />
+                        <div key={movie.id} className="row__posterContainer">
+                            <img
+                                className={`row__poster ${isLargeRow && 'row__posterLarge'}`} 
+                                src={`${base_url}${
+                                    isLargeRow ? movie.poster_path : movie.backdrop_path
+                                }`} 
+                                alt={movie.name} 
+                            />
+                            {
+                                !isLargeRow && 
+
+                                <div className="row__posterTitle">
+                                    <p>{movie.title ? movie.title : movie.name}</p>
+                                </div>
+                            }
+                        </div>
                     ) 
                 ))}
             </div>
